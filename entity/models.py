@@ -21,5 +21,10 @@ class Appointment(models.Model):
     def publish(self):
         self.save()
 
+    # def my_property(self):
+    #     return 'Patient:' + self.patient.name + '; Birth:' + self.patient.birth + '; Appointment Date:' + self.dateTime
+    # # my_property.short_description = "Appointment information"
+
+
     def __str__(self):
         return str(self.patient)
