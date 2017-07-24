@@ -1,0 +1,10 @@
+{% extends 'entity/base.html' %}
+
+{% block content %}
+    <h1>New Patient</h1>
+    <form action="{% url 'patient_edit' %}" method="POST" class="post-form">{% csrf_token %}
+          {% render_form serializer %}
+          {{ form.as_p }}
+          <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

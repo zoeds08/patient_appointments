@@ -1,20 +1,26 @@
+{% load staticfiles %}
 <html>
     <head>
         <title>Patient-Appointments-System</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/system.css' %}">
     </head>
     <body>
-        <div>
+      <div class="page-header">
             <h1><a href="">Patient Appointments System</a></h1>
-        </div>
+      </div>
+      <div class="content container">
+          <div>
+              <h2><a href="{% url 'patient_list' %}">Patient List</a></h2>
+          </div>
 
-        <div>
-            <h2><a href="">Patient List</a></h2>
-            <p></p>
-        </div>
+          <div>
+              <h2><a href="{% url 'appointment_list' %}">Appointment List</a></h2>
+              <p></p>
+          </div>
 
-        <div>
-            <h2><a href="">Appointment List</a></h2>
-            <p></p>
-        </div>
+      </div>
     </body>
 </html>

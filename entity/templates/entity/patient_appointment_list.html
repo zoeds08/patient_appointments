@@ -1,0 +1,14 @@
+{% extends 'entity/base.html' %}
+{% block content %}
+<h1><a href="/">Patient-Appointments List</a></h1>
+                  {% for appointment in appointments %}
+                    <div class="post">
+                            <div class="date">
+                                <p>Name: {{ appointment.patient.name }}</p>
+                                <p>Date: {{ appointment.date }}</p>
+                                <p>Time: {{ appointment.time }}</p>
+                            </div>
+
+                    </div>
+                  {% endfor %}
+{% endblock %}

@@ -1,0 +1,6 @@
+django==1.9
+django-mongonaut==0.2.20
+mongoengine==0.9
+pymongo==2.8
+djangorestframework==3.3.3
+django-rest-framework-mongoengine
