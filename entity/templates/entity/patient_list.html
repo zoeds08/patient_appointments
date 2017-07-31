@@ -1,15 +1,11 @@
 {% extends 'entity/base.html' %}
 {% block content %}
 <h1><a href="/">Patients List</a></h1>
-<div class="page-header">
-    <a href="{% url 'patient_edit' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-</div>
                   {% for patient in patients %}
                     <div class="post">
                             <div class="date">
                                 <p><a href="{% url 'patient_appointment_list' pk=patient.pk %}">Name: {{ patient.name }}</a></p>
                                 <p>Birth: {{ patient.birth }}</p>
-                                <a class="btn btn-default" href="{% url 'patient_edit' %}"><span class="glyphicon glyphicon-pencil"></span></a>
                             </div>
 
                     </div>

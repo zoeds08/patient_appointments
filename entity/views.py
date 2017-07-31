@@ -10,6 +10,12 @@ from .models import Patient, Appointment
 
 from rest_framework import generics
 
+class PatientViewSet(MongoModelViewSet):
+    # lookup_field = 'id'
+    serializer_class = PatientSerializer
+    def get_queryset(self):
+        return Patient.objects.all()
+
 class ApppointmentViewSet(MongoModelViewSet):
     """
     Contains information about inputs/outputs of a single program
@@ -17,18 +23,8 @@ class ApppointmentViewSet(MongoModelViewSet):
     """
     # lookup_field = 'id'
     serializer_class = AppointmentSerializer
-    # permission_classes = (IsAuthenticated,)
-    # authentication_classes = (TokenAuthentication,)
-
     def get_queryset(self):
         return Appointment.objects.all()
-
-class PatientViewSet(MongoModelViewSet):
-    # lookup_field = 'id'
-    serializer_class = PatientSerializer
-
-    def get_queryset(self):
-        return Patient.objects.all()
 
 
 class PatientAppointmentsList(generics.ListAPIView):

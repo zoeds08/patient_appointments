@@ -1,15 +1,13 @@
 {% extends 'entity/base.html' %}
 {% block content %}
 <h1><a href="/">Appointments List</a></h1>
-<a href="{% url 'appointment_edit' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                   {% for appointment in appointments %}
                     <div class="post">
                             <div class="date">
                                 <p>Name: {{ appointment.patient.name }}</p>
-                                <p>Date: {{ appointment.date }}</p>
-                                <p>Time: {{ appointment.time }}</p>
+                                <p>DateTime: {{ appointment.date }}</p>
+
                             </div>
-                              <a class="btn btn-default" href="{% url 'appointment_edit' %}"><span class="glyphicon glyphicon-pencil"></span></a>
                     </div>
                   {% endfor %}
 {% endblock %}
